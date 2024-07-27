@@ -1,0 +1,71 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.element::-webkit-scrollbar {
+    width: 0;
+  }
+  
+::-webkit-scrollbar {
+    width: 0;
+}
+
+body{
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    background-color: #1c1c1c;
+}
+
+.character_image{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    box-shadow: inset 0px -70px 500px rgba(0, 0, 0, 0.5);
+}
+.character_image img{
+    margin-top: auto;
+    max-height: 95vh;
+    max-width: 100%;
+    z-index: -1;
+    user-select: none;
+}
+#bg_lines{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
+    z-index: -2;
+}
+.bg_line {
+    will-change:transform;
+    position: relative;
+    min-width: 35px; 
+    min-height: 100vh;
+    background: #222222;
+    margin: 0 12px;
+    transform: skew(-45deg) translateZ(0);
+    box-shadow: 7px 0px 8px rgba(0, 0, 0, .2);
+    transition: ease;
+    animation-name: slidein;
+    animation: slidein 90s infinite;
+    animation-timing-function: linear;
+}
+@keyframes slidein {
+    from {
+        left: -100%;
+        top: -100%;
+    }
+
+    to {
+        left: 0;
+        top: 0;
+    }
+}
